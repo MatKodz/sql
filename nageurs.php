@@ -2,10 +2,6 @@
 <?php
 
 require("connect.php");
-/*
-$requete1 = "SELECT perf_distance, perf_style, perf_temps, profile_genre, profile_nom FROM nageur_performance INNER JOIN nageur_profile
-ON nageur_profile.id_profile = nageur_performance.fk_id_profile
-WHERE profile_genre = ? AND CONCAT(perf_distance,' ',perf_style) = ? ";*/
 
 
 $requeteOptions = "SELECT DISTINCT (CONCAT(perf_distance, ' ', perf_style)) AS epreuve FROM nageur_performance";
@@ -38,19 +34,6 @@ else {
   $jeu = $conn->query($requete);
   $data = $jeu->fetchAll();
 }
-
-
-
-/*
-$sth = $conn->prepare($requete1);
-$sth->execute(array("f","100 Nage libre"));
-$jeu = $sth->fetchAll();
-foreach($jeu as $performance) {
-echo $performance['profile_nom'] . $performance['perf_style'] . $performance['perf_distance'] . "<br>" ;
-}*/
-
-
-
 
 ?>
 
