@@ -30,9 +30,9 @@ INSERT INTO nageur_performance VALUES
  SELECT * FROM nageur_performance LIMIT 10;
 ROLLBACK;
 
--- Question 2, création d'une procédure pour supprimer un profile_nationalite
+-- Question 2, création d'une procédure pour supprimer un profile_
 DELIMITER $$
-CREATE PROCEDURE delete_profile(IN profileid IN)
+CREATE PROCEDURE delete_profile(IN profileid INT)
 BEGIN
   DECLARE EXIT HANDLER FOR 1451 SELECT "Impossible de supprimer le nageur" as MSG;
   DELETE FROM nageur_profile WHERE id_profile = profileid;
