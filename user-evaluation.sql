@@ -52,6 +52,7 @@ CREATE USER 'etu'@'%.wis.fr' IDENTIFIED BY 'etu';
 GRANT EXECUTE ON etudiants_liste.* TO 'etu'@'%.wis.fr';
 GRANT SELECT, UPDATE ON etudiants_liste.wis_b1 TO 'etu'@'%.wis.fr';
 GRANT SELECT, UPDATE ON etudiants_liste.wis_b2 TO 'etu'@'%.wis.fr';
+FLUSH PRIVILEGES;               
 SHOW GRANTS FOR 'etu'@'%.wis.fr';
 
 -- Question Bonus --
